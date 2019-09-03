@@ -1,0 +1,30 @@
+{
+  "name": "express-monolith-starter-kit",
+  "version": "1.0.0",
+  "description": "starter kit of node express with monolithic architecture design",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-form-data": "^2.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tonytoons/SCG-Node-Express-starter-kit.git"
+  },
+  "keywords": [
+    "scg",
+    "node",
+    "express",
+    "starter",
+    "kit"
+  ],
+  "author": "Amarit Jarasjindarat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tonytoons/SCG-Node-Express-starter-kit/issues"
+  },
+  "homepage": "https://github.com/Tonytoons/SCG-Node-Express-starter-kit#readme"
+}
