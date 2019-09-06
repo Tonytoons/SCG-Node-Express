@@ -46,7 +46,7 @@ app.use(expFormData.parse(expFormDataOptions)) // parse data with connect-multip
 app.use(expFormData.format()) // delete from the request all empty files (size == 0)
 // app.use(expFormData.stream()) // change the file objects to fs.ReadStream 
 // app.use(expFormData.union()) // union the body and the files
-app.use(inspectRequest) // use middleware to inspect request before reach the presenter function
+// app.use(inspectRequest) // use middleware to inspect request before reach the presenter function
 app.use(cors(corsOptionsDelegate))
 
 /*
