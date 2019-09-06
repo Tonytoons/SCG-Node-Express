@@ -6,7 +6,7 @@
  * Created at : 2019-15-07
  */
 
-const BaseDB = require('../base/basedb.js')
+const BaseDB = require('./base/basedb.js')
 
 class MockDB extends BaseDB {
 
@@ -15,6 +15,7 @@ class MockDB extends BaseDB {
      * @param {*} events and event base callback
      */
     constructor(events) {
+        super()
         this.events = events
     }
 
