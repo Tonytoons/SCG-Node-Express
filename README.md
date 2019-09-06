@@ -2,7 +2,7 @@
 
 Starter-kit with various implementation of NodeJS
 
-##express-monolith-starter-kit
+## express-monolith-starter-kit
 Monolithic archtecture with clean event based code structure
-- command
+- run command
   npm start
