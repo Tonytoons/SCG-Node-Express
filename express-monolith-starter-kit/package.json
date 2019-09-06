@@ -4,11 +4,13 @@
   "description": "starter kit of node express with monolithic architecture design",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "dev": "node index.js",
+    "test": "do test script here"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "express-form-data": "^2.0.10"
+    "express-form-data": "^2.0.10",
+    "cors": "^2.8.5"
   },
   "repository": {
     "type": "git",
