@@ -1,7 +1,7 @@
 /*
  *
  ############################################
- * Index of routers
+ * Index of apps
  ############################################
  *
  */
@@ -9,11 +9,12 @@
 /*
  * Initialize Express and others network module
  */
-const expFormData = require("express-form-data")
+const config = require('./repos/config/config')
+const expFormData = require('express-form-data')
 const express = require('express')
 const app = express()
 const expFormDataOptions = {
-    uploadDir: __dirname + "/dump",
+    uploadDir: __dirname + '/dump',
     maxFilesSize: 5000,
     autoClean: true
 }
@@ -25,7 +26,7 @@ const expFormDataOptions = {
 const cors = require('cors')
 app.options('*', cors())
 
-const whitelist = ['http://localhost:8010', 'http://localhost:8020']
+const whitelist = config.whitelist
 
 const corsOptionsDelegate = function (req, callback) {
     let corsOptions
@@ -49,68 +50,16 @@ app.use(expFormData.format()) // delete from the request all empty files (size =
 // app.use(inspectRequest) // use middleware to inspect request before reach the presenter function
 app.use(cors(corsOptionsDelegate))
 
-/*
- * Initialize user management presenter
- */
-const StarterPresenter = require('./repos/starter/presenter/presenter.js')
-const starterPreseneter = new StarterPresenter()
 
-/*
- *
- ############################################
- * Endpoints initiative
- ############################################
- *
- */
+const starter = require('./repos/starter/index')
 
- /**
- * example of get api
- */
-app.get("/starter/api/get/:suffix", (req, res) => {
-    const callback = (result) => {
-        res.json(result)
-    }
-    starterPreseneter.setCallback(callback)
-    starterPreseneter.get(req.params.id)
-})
+app.use(starter)
 
-/**
- * example of post api
- */
-app.post("/starter/api/post/:suffix", (req, res) => {
-    const callback = (result) => {
-        res.json(result)
-    }
-    starterPreseneter.setCallback(callback)
-    starterPreseneter.post(req.body.message)
-})
-
-/**
- * example of put api
- */
-app.put("/starter/api/put/:suffix", (req, res) => {
-    const callback = (result) => {
-        res.json(result)
-    }
-    starterPreseneter.setCallback(callback)
-    starterPreseneter.put(req.body.message)
-})
-
-/**
- * example of delete api
- */
-app.delete("/starter/api/delete/:suffix", (req, res) => {
-    const callback = (result) => {
-        res.json(result)
-    }
-    starterPreseneter.setCallback(callback)
-    starterPreseneter.delete(req.params.id)
-})
 
 /**
  * server listen
  */
-const port = process.env.PORT || 3000
+const port = process.env.PORT || config.default_port
 app.listen(port, () => {
-    console.log("API listening on port " + port)
+    console.log('API listening on port ' + port)
 })

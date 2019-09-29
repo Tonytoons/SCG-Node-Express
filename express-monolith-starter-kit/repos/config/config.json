@@ -1,0 +1,4 @@
+{
+    "whitelist": ["http://localhost:8010", "http://localhost:8020"],
+    "default_port": 3000
+}

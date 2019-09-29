@@ -22,6 +22,7 @@ class CtrlStarter {
      */
     bundleUser(message) {
         message.user = { user_id: '1001', username: 'testuser' }
+        this.events[Symbol.iterator]().return(message)
     }
 
     /**

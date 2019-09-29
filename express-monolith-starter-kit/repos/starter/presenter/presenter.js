@@ -90,7 +90,7 @@ class StarterPresenter {
                     },
                     messageNotFound: function(errmsg) {
                         console.log('handle message not found')
-                        instance.callback(null, errmsg)
+                        instance.callback(errmsg)
                         return { done: false, value: errmsg }
                     },
                     return: function(message) {
