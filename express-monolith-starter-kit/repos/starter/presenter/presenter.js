@@ -79,7 +79,7 @@ class StarterPresenter {
                     },
                     messageUpdated: function(message) {
                         console.log('handle message updated')
-                        instance.ctrlPurchase.bundleUser(message)
+                        instance.ctrlStarter.bundleUser(message)
                         return { done: false, value: message }
                     },
                     messageDeleted: function(message) {
